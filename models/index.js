@@ -11,3 +11,11 @@ const Group = model('groups', GroupSchema);
 const Post = model('posts', PostSchema);
 const User = model('users', UserSchema);
 
+
+module.exports = {
+    Channel,
+    Comment,
+    Group,
+    Post,
+    User
+}
