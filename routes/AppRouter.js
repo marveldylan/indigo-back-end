@@ -13,5 +13,7 @@ Router.use('./group', GroupRouter)
 Router.use('./post', PostRouter)
 Router.use('./user', UserRouter)
 
-module.exports = Router
+module.exports = (
+    Router
+)
 

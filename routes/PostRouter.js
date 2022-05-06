@@ -4,4 +4,6 @@ const middleware = require('../middleware')
 
 //Routes
 
-module.exports = Router
+module.exports = (
+    Router
+)

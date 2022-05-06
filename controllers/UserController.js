@@ -23,7 +23,7 @@ const getUserById = async (req, res) => {
     }
 }
 
-module.exports(
+module.exports = (
     getUser,
     getUserById
 )
