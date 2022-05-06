@@ -4,8 +4,7 @@ const { User } = require('../models')
 const Login = async (req, res) => {
   try {
     const user = await User.findOne({
-      where: { email: req.body.email },
-      raw: true
+      email: req.body.email
     })
     if (
       user &&
@@ -28,7 +27,7 @@ const Register = async (req, res) => {
   try {
     const { email, password, firstName, lastName, username } = req.body
     let passwordDigest = await middleware.hashPassword(password)
-    const user = await User.create({ email, passwordDigest, firstName, lastName, username })
+    const user = await new User({ email, passwordDigest, firstName, lastName, username });
     res.send(user)
   } catch (error) {
     throw error
@@ -36,7 +35,9 @@ const Register = async (req, res) => {
 }
 const UpdatePassword = async (req, res) => {
   try {
-    const user = await User.findOne({ where: { email: req.body.email } })
+    const user = await User.findOne({
+       email: req.body.email
+      })
     if (
       user &&
       (await middleware.comparePassword(
@@ -46,7 +47,7 @@ const UpdatePassword = async (req, res) => {
     ) {
       let passwordDigest = await middleware.hashPassword(req.body.newPassword)
 
-      await user.update({ passwordDigest })
+      await user.update({ passwordDigest }) //may have to use save or findbyIdandupate or updateOne
       return res.send({ status: 'Success', msg: 'Password Updated' })
     }
     res.status(401).send({ status: 'Error', msg: 'Invalid Credentials' })

@@ -7,11 +7,11 @@ const PostRouter = require('./PostRouter')
 const UserRouter = require('./UserRouter')
 
 Router.use('./auth', AuthRouter)
-Router.use('./channel', ChannelRouter)
-Router.use('./comment', CommentRouter)
-Router.use('./group', GroupRouter)
-Router.use('./post', PostRouter)
-Router.use('./user', UserRouter)
+Router.use('./channels', ChannelRouter)
+Router.use('./comments', CommentRouter)
+Router.use('./groups', GroupRouter)
+Router.use('./posts', PostRouter)
+Router.use('./users', UserRouter)
 
 module.exports = (
     Router
