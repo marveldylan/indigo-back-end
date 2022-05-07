@@ -21,6 +21,28 @@ const getChannels = async (req, res) => {
     }
 }
 
+
+const getChannelsByGroup = async (req, res) => {
+    try {
+        const channels = await Channel.find({
+            group_id: req.params.group_id
+        })
+        return res.status(200).json({ channels })
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+const getChannelsByUser = async (req, res) => {
+    try {
+        const channels = await Channel.find({
+            user_id: req.params.user_id
+        })
+        return res.status(200).json({ channels })
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 const getChannelById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -66,6 +88,8 @@ const deleteChannel = async (req, res) => {
 module.exports = {
     createChannel,
     getChannels,
+    getChannelsByGroup,
+    getChannelsByUser,
     getChannelById,
     updateChannel,
     deleteChannel

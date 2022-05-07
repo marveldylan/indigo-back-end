@@ -9,6 +9,16 @@ Router.get(
 )
 
 Router.get(
+    '/group/:group_id',
+    controller.getChannelsByGroup
+)
+
+Router.get(
+    '/user/:user_id',
+    controller.getChannelsByUser
+)
+
+Router.get(
     '/:id',
     controller.getChannelById
 )
