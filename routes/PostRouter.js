@@ -14,7 +14,7 @@ Router.get(
 )
 
 Router.post(
-    '/:channel_id',
+    '/:channel_id/:user_id',
     middleware.stripToken,
     middleware.verifyToken,
     controller.createPost

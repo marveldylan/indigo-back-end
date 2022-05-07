@@ -4,7 +4,19 @@ const { Post } = require('../models')
 const createPost = async (req, res) => {
     console.log(req.body)
     try {
-        const post = await new Post(req.body)
+        let channelId = req.params.channel_id
+        let userId = req.params.user_id
+        let postBody = {
+            user_id: userId,
+            channel_id: channelId,
+            red_score: 0,
+            blue_score: 0,
+            indigo: 0,
+            comment_counter: 0,
+            views: 0,
+            ...req.body
+        }
+        const post = await new Post(postBody)
         await post.save()
         return res.status(201).json({ post });
     } catch (error) {

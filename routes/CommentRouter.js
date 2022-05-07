@@ -14,7 +14,7 @@ Router.get(
 )
 
 Router.post(
-    '/:post_id',
+    '/:post_id/:user_id',
     middleware.stripToken,
     middleware.verifyToken,
     controller.createComment

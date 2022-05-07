@@ -4,7 +4,18 @@ const { Comment } = require('../models')
 const createComment = async (req, res) => {
     console.log(req.body)
     try {
-        const comment = await new Comment(req.body)
+        let postId = req.params.post_id
+        let userId = req.params.user_id
+        let commentBody = {
+            user_id: userId,
+            post_id: postId,
+            red_score: 0,
+            blue_score: 0,
+            indigo: 0,
+            comment_counter: 0,
+            ...req.body
+        }
+        const comment = await new Comment(commentBody)
         await comment.save()
         return res.status(201).json({ comment });
     } catch (error) {

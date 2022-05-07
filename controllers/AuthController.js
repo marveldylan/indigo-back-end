@@ -25,9 +25,9 @@ const Login = async (req, res) => {
 
 const Register = async (req, res) => {
   try {
-    const { email, password, first_name, last_name, username, red_score, blue_score, indigo } = req.body
+    const { email, password, first_name, last_name, username } = req.body
     let password_digest = await middleware.hashPassword(password)
-    const user = await new User({ email, password_digest, first_name, last_name, username, red_score, blue_score, indigo });
+    const user = await new User({ email, password_digest, first_name, last_name, username, red_score: 0, blue_score: 0, indigo: 0 });
     await user.save()
     return res.status(201).json({ user });
     // res.send(user)
