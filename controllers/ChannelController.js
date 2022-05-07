@@ -4,7 +4,20 @@ const { Channel } = require('../models')
 const createChannel = async (req, res) => {
     console.log(req.body)
     try {
-        const channel = await new Channel(req.body)
+        let groupId = req.params.group_id
+        let userId = req.params.user_id
+        let channelBody = {
+            group_id: groupId,
+            user_id: userId,
+            red_score: 0,
+            blue_score: 0,
+            indigo: 0,
+            post_counter: 0,
+            follower_counter: 0,
+            views: 0,
+            ...req.body
+        }
+        const channel = await new Channel(channelBody)
         await channel.save()
         return res.status(201).json({ channel });
     } catch (error) {

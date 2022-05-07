@@ -24,7 +24,7 @@ Router.get(
 )
 
 Router.post(
-    '/',
+    '/:group_id/:user_id',
     middleware.stripToken,
     middleware.verifyToken,
     controller.createChannel
