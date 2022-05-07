@@ -8,6 +8,7 @@ const Channel = new Schema (
         tags: [{ type: String, required: false}],
         name: { type: String, required: true },
         cover_image: { type: String, required: false },
+        theme: { type: String, required: false},
         red_score: { type: Number, required: true },
         blue_score: { type: Number, required: true },
         indigo: { type: Number, required: true },
