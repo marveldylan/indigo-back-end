@@ -3,9 +3,9 @@ const Schema = mongoose.Schema
 
 const Channel = new Schema (
     {
-        _id: { type: Schema.Types.ObjectId, required: true },
         user_id: { type: Schema.Types.ObjectId, ref: 'users'},
         group_id: { type: Schema.Types.ObjectId, ref: 'group'},
+        tags: [{ type: String, required: false}],
         name: { type: String, required: true },
         cover_image: { type: String, required: false },
         red_score: { type: Number, required: true },

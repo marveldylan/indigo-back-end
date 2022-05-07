@@ -14,7 +14,9 @@ const createComment = async (req, res) => {
 
 const getComments = async (req, res) => {
     try {
-        const comments = await Comment.find()
+        const comments = await Comment.find({
+            post_id: req.params.post_id        
+        })
         return res.status(200).json({ comments })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -23,8 +25,8 @@ const getComments = async (req, res) => {
 
 const getCommentById = async (req, res) => {
     try {
-        const { id } = req.params;
-        const comment = await Comment.findById(id)
+        const commentId = req.params.comment_id;
+        const comment = await Comment.findById(commentId)
         if (comment) {
             return res.status(200).json({ comment });
         }
@@ -39,7 +41,7 @@ const getCommentById = async (req, res) => {
 
 const updateComment = async (req, res) => {
     try {
-        const comment = await Comment.findByIdAndUpdate(req.params.id, req.body, {
+        const comment = await Comment.findByIdAndUpdate(req.params.comment_id, req.body, {
             new: true
         })
         res.json(comment)
@@ -50,8 +52,8 @@ const updateComment = async (req, res) => {
 
 const deleteComment = async (req, res) => {
     try {
-        const { id } = req.params;
-        const deleted = await Comment.findByIdAndDelete(id)
+        const commentId = req.params.comment_id;
+        const deleted = await Comment.findByIdAndDelete(commentId)
         if (deleted) {
             return res.status(200).send("Comment deleted");
         }

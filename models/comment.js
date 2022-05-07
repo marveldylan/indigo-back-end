@@ -3,10 +3,8 @@ const Schema = mongoose.Schema
 
 const Comment = new Schema (
     {
-        _id: { type: Schema.Types.ObjectId, required: true },
         user_id: { type: Schema.Types.ObjectId, ref: 'users'},
-        channel_id: { type: Schema.Types.ObjectId, ref: 'channels'},
-        group_id: { type: Schema.Types.ObjectId, ref: 'groups'},
+        post_id: { type: Schema.Types.ObjectId, ref: 'posts'},
         content: { type: String, required: true },
         background: { type: String, required: false },
         red_score: { type: Number, required: true },

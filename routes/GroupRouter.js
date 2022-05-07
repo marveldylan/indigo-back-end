@@ -1,38 +1,39 @@
-const { Router } = require('express');
-const router = Router()
+const Router = require('express').Router()
 const controller = require('../controllers/GroupController')
 const middleware = require('../middleware')
 
 //Routes
-//Routes
-router.get(
+Router.get(
     '/',
     controller.getGroups
 )
 
-router.get(
-    '/:group_id',
+Router.get(
+    '/:id',
     controller.getGroupById
 )
 
-router.post(
-    './:group_id',
+Router.post(
+    '/',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.createGroup
 )
 
-router.put(
-    '/:group_id',
+Router.put(
+    '/:id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.updateGroup
 )
 
-router.delete(
-    '/:group_id',
+Router.delete(
+    '/:id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.deleteGroup
 )
 
-module.exports = (
-    router
-)
 module.exports = (
     Router
 )

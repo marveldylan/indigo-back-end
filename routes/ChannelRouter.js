@@ -1,33 +1,39 @@
-const { Router } = require('express');
-const router = Router()
+const Router = require('express').Router()
 const controller = require('../controllers/ChannelController')
+const middleware = require('../middleware')
 
 //Routes
-router.get(
+Router.get(
     '/',
     controller.getChannels
 )
 
-router.get(
-    '/:channel_id',
+Router.get(
+    '/:id',
     controller.getChannelById
 )
 
-router.post(
-    './:channel_id',
+Router.post(
+    '/',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.createChannel
 )
 
-router.put(
-    '/:channel_id',
+Router.put(
+    '/:id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.updateChannel
 )
 
-router.delete(
-    '/:channel_id',
+Router.delete(
+    '/:id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.deleteChannel
 )
 
 module.exports = (
-    router
+    Router
 )

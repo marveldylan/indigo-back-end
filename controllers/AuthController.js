@@ -8,10 +8,10 @@ const Login = async (req, res) => {
     })
     if (
       user &&
-      (await middleware.comparePassword(user.passwordDigest, req.body.password))
+      (await middleware.comparePassword(user.password_digest, req.body.password))
     ) {
       let payload = {
-        id: user.id,
+        id: user._id,
         email: user.email
       }
       let token = middleware.createToken(payload)
@@ -25,10 +25,12 @@ const Login = async (req, res) => {
 
 const Register = async (req, res) => {
   try {
-    const { email, password, firstName, lastName, username } = req.body
-    let passwordDigest = await middleware.hashPassword(password)
-    const user = await new User({ email, passwordDigest, firstName, lastName, username });
-    res.send(user)
+    const { email, password, first_name, last_name, username, red_score, blue_score, indigo } = req.body
+    let password_digest = await middleware.hashPassword(password)
+    const user = await new User({ email, password_digest, first_name, last_name, username, red_score, blue_score, indigo });
+    await user.save()
+    return res.status(201).json({ user });
+    // res.send(user)
   } catch (error) {
     throw error
   }
@@ -41,13 +43,13 @@ const UpdatePassword = async (req, res) => {
     if (
       user &&
       (await middleware.comparePassword(
-        user.dataValues.passwordDigest,
+        user.dataValues.password_digest,
         req.body.oldPassword
       ))
     ) {
-      let passwordDigest = await middleware.hashPassword(req.body.newPassword)
+      let password_digest = await middleware.hashPassword(req.body.newPassword)
 
-      await user.update({ passwordDigest }) //may have to use save or findbyIdandupate or updateOne
+      await user.updateOne({ password_digest }) //may have to use save or findbyIdandupate or updateOne
       return res.send({ status: 'Success', msg: 'Password Updated' })
     }
     res.status(401).send({ status: 'Error', msg: 'Invalid Credentials' })

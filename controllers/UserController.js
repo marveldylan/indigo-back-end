@@ -1,7 +1,7 @@
 const { default: mongoose } = require('mongoose')
 const { User } = require('../models')
 
-const getUser = async (req, res) => {
+const getUsers = async (req, res) => {
     try {
         const users = await User.find()
         return res.status(200).json({ users })
@@ -23,7 +23,19 @@ const getUserById = async (req, res) => {
     }
 }
 
-module.exports = (
-    getUser,
-    getUserById
-)
+const updateUser = async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+            new: true
+        })
+        res.json(user)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
+
+module.exports = {
+    getUsers,
+    getUserById,
+    updateUser
+}

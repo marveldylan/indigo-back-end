@@ -14,7 +14,9 @@ const createPost = async (req, res) => {
 
 const getPosts = async (req, res) => {
     try {
-        const posts = await Post.find()
+        const posts = await Post.find({
+            channel_id: req.params.channel_id
+        })
         return res.status(200).json({ posts })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -23,8 +25,8 @@ const getPosts = async (req, res) => {
 
 const getPostById = async (req, res) => {
     try {
-        const { id } = req.params;
-        const post = await Post.findById(id)
+        const postId  = req.params.post_id;
+        const post = await Post.findById(postId)
         if (post) {
             return res.status(200).json({ post });
         }
@@ -39,7 +41,7 @@ const getPostById = async (req, res) => {
 
 const updatePost = async (req, res) => {
     try {
-        const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
+        const post = await Post.findByIdAndUpdate(req.params.post_id, req.body, {
             new: true
         })
         res.json(post)
@@ -50,8 +52,8 @@ const updatePost = async (req, res) => {
 
 const deletePost = async (req, res) => {
     try {
-        const { id } = req.params;
-        const deleted = await Post.findByIdAndDelete(id)
+        const postId  = req.params.post_id;
+        const deleted = await Post.findByIdAndDelete(postId)
         if (deleted) {
             return res.status(200).send("Post deleted");
         }

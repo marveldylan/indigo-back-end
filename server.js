@@ -15,7 +15,7 @@ const PORT = process.env.Port || 3001;
 // app.use() Middleware:
 app.use(cors());
 
-app.use(express.static(`${__dirname}/client/build`));
+// app.use(express.static(`${__dirname}/client/build`));
 
 app.use(express.json());
 
@@ -23,15 +23,15 @@ app.use(bodyParser.json());
 
 app.use(logger('dev'));
 
-app.use(urlencoded({required: false}));
+// app.use(urlencoded({required: false}));
 
 app.use('/', AppRouter)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-app.get('/*', (req, res) => {
-    res.sendFile(`${__dirname}/client/build/index.html`)
-   });
+// app.get('/*', (req, res) => {
+//     res.sendFile(`${__dirname}/client/build/index.html`)
+//    });
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 

@@ -1,37 +1,37 @@
-const { Router } = require('express');
-const router = Router()
+const Router = require('express').Router()
 const controller = require('../controllers/PostController')
 const middleware = require('../middleware')
 
 //Routes
-//Routes
-router.get(
-    '/',
+Router.get(
+    '/:channel_id',
     controller.getPosts
 )
 
-router.get(
-    '/:post_id',
+Router.get(
+    '/:channel_id/:post_id',
     controller.getPostById
 )
 
-router.post(
-    './:post_id',
+Router.post(
+    '/:channel_id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.createPost
 )
 
-router.put(
-    '/:post_id',
+Router.put(
+    '/:channel_id/:post_id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.updatePost
 )
 
-router.delete(
-    '/:post_id',
+Router.delete(
+    '/:channel_id/:post_id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.deletePost
-)
-
-module.exports = (
-    router
 )
 
 module.exports = (

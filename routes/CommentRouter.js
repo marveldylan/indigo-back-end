@@ -1,38 +1,39 @@
-const { Router } = require('express');
-const router = Router()
+const Router = require('express').Router()
 const controller = require('../controllers/CommentController')
 const middleware = require('../middleware')
 
 //Routes
-//Routes
-router.get(
-    '/',
+Router.get(
+    '/:post_id',
     controller.getComments
 )
 
-router.get(
-    '/:comment_id',
+Router.get(
+    '/:post_id/:comment_id',
     controller.getCommentById
 )
 
-router.post(
-    './:comment_id',
+Router.post(
+    '/:post_id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.createComment
 )
 
-router.put(
-    '/:comment_id',
+Router.put(
+    '/:post_id/:comment_id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.updateComment
 )
 
-router.delete(
-    '/:comment_id',
+Router.delete(
+    '/:post_id/:comment_id',
+    middleware.stripToken,
+    middleware.verifyToken,
     controller.deleteComment
 )
 
-module.exports = (
-    router
-)
 module.exports = (
     Router
 )
