@@ -27,5 +27,5 @@ const getCategoryById = async (req, res) => {
 
 module.exports = {
     getCategories,
-    getCategoryById,
+    getCategoryById
 }
