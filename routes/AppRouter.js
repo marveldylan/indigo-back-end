@@ -10,6 +10,7 @@ Router.use('/auth', AuthRouter)
 Router.use('/channels', ChannelRouter)
 Router.use('/comments', CommentRouter)
 Router.use('/groups', GroupRouter)
+Router.use('/categories', CategoryRoute);
 Router.use('/posts', PostRouter)
 Router.use('/users', UserRouter)
 
