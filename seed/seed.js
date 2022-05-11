@@ -13,85 +13,85 @@ const createCategories = async () => {
         {
             name: 'Music',
             cover_image: 'https://i.imgur.com/qpuXD6R.jpg',
-            channel_counter: 21,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 1250
         },
         {
             name: 'Sports',
             cover_image: 'https://i.imgur.com/w2Rlgyw.jpg',
-            channel_counter: 27,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 6588
         },
         {
             name: 'Design',
             cover_image: 'https://i.imgur.com/b59Z2fW.jpg',
-            channel_counter: 17,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 856
         },
         {
             name: 'Programming',
             cover_image: 'https://i.imgur.com/0uI10hk.jpg',
-            channel_counter: 34,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 8093
         },
         {
             name: 'Art',
             cover_image: 'https://i.imgur.com/RQWLdNs.jpg',
-            channel_counter: 14,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 1250
         },
         {
             name: 'Photography',
             cover_image: 'https://i.imgur.com/ZFbkAYx.jpg',
-            channel_counter: 37,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 14000
         },
         {
             name: 'Gaming',
             cover_image: 'https://i.imgur.com/kL7Xylm.jpg',
-            channel_counter: 62,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 21420
         },
         {
             name: 'Crypto',
             cover_image: 'https://i.imgur.com/SkKwgCv.jpg',
-            channel_counter: 42,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 17200
         },
         {
             name: 'Science',
             cover_image: 'https://i.imgur.com/dkuOtC7.jpg',
-            channel_counter: 16,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 12200
         },
         {
             name: 'Real Estate',
             cover_image: 'https://i.imgur.com/pOZ6mKF.jpg',
-            channel_counter: 57,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 22510,
         },
         {
             name: 'Cooking',
             cover_image: 'https://i.imgur.com/Hl4QWT8.jpg',
-            channel_counter: 42,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 28800
         },
         {
             name: 'Baking',
             cover_image: 'https://i.imgur.com/KSWGXJT.jpg',
-            channel_counter: 63,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 38600
         },
         {
             name: 'Finance & Accounting',
             cover_image: 'https://i.imgur.com/t8BaOim.jpg',
-            channel_counter: 2,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 2,
         },
         {
             name: 'Health & Wellness',
             cover_image: 'https://i.imgur.com/YFVJUlc.jpg',
-            channel_counter:2 ,
+            group_counter: Math.floor(Math.random * 30),
             follower_counter: 2,
         }
 
