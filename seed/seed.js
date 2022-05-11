@@ -81,7 +81,7 @@ const createGroups = async () => {
             views: 163408
         },
         {
-            name: 'Cryto',
+            name: 'Crypto',
             cover_image: 'https://i.imgur.com/SkKwgCv.jpg',
             theme: 'Dark',
             red_score: 6270,
