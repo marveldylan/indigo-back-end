@@ -11,7 +11,7 @@ const Post = new Schema (
         tags: [{ type: String, required: false}],
         red_score: { type: Number, required: true },
         blue_score: { type: Number, required: true },
-        indigo: { type: Number, required: true },
+        indigo: { type: Number, default: function() {return (this.red_score / this.blue_score).toFixed(2)}, required: true },
         comment_counter: { type: Number, required: true },
         views: { type: Number, required: true }
     },
