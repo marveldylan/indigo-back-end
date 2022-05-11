@@ -8,39 +8,39 @@ const createGroups = async () => {
     const groups = [
         {
             name: 'Music',
-            red_score: 0,
-            blue_score: 0,
-            indigo: 0,
-            channel_counter: 0,
-            follower_counter: 0,
-            views: 0
+            red_score: 680,
+            blue_score: 5423,
+            indigo: 7.98,
+            channel_counter: 21,
+            follower_counter: 1250,
+            views: 54554
         },
         {
             name: 'Sports',
-            red_score: 0,
-            blue_score: 0,
-            indigo: 0,
-            channel_counter: 0,
-            follower_counter: 0,
-            views: 0
+            red_score: 2134,
+            blue_score: 12502,
+            indigo: 5.85,
+            channel_counter: 27,
+            follower_counter: 6588,
+            views: 98221
         },
         {
             name: 'Design',
-            red_score: 0,
-            blue_score: 0,
-            indigo: 0,
-            channel_counter: 0,
-            follower_counter: 0,
-            views: 0
+            red_score: 110,
+            blue_score: 4030,
+            indigo: 36.6,
+            channel_counter: 17,
+            follower_counter: 856,
+            views: 19021
         },
         {
             name: 'Programming',
-            red_score: 0,
-            blue_score: 0,
-            indigo: 0,
-            channel_counter: 0,
-            follower_counter: 0,
-            views: 0
+            red_score: 520,
+            blue_score: 11201,
+            indigo:21.5,
+            channel_counter: 34,
+            follower_counter: 8093,
+            views: 120271
         }
 
     ]
