@@ -16,6 +16,7 @@ const User = new Schema (
         red_score: { type: Number, required: true },
         blue_score: { type: Number, required: true },
         indigo: { type: Number, required: true },
+        user_groups: [{ type: Schema.Types.ObjectId, ref:'groups'}],
         subscribed_groups: [{ type: Schema.Types.ObjectId, ref:'groups'}],
         user_channels: [{ type: Schema.Types.ObjectId, ref: 'channels' }],
         subscribed_channels: [{ type: Schema.Types.ObjectId, ref: 'channels' }],
