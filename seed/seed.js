@@ -1,146 +1,89 @@
 const { default: mongoose } = require('mongoose');
 const db = require('../db')
-const {Channel, Comment, Group, Post, User} = require('../models')
+const {Channel, Comment, Group, Category, Post, User} = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDb connection error:'));
 // Images for seed data taken from Unsplash.com
-const createGroups = async () => {
-    const groups = [
+const createCategories = async () => {
+    const categories = [
         {
             name: 'Music',
             cover_image: 'https://i.imgur.com/qpuXD6R.jpg',
-            theme: 'Light',
-            red_score: 680,
-            blue_score: 5423,
-            indigo: 7.98,
             channel_counter: 21,
-            follower_counter: 1250,
-            views: 54554
+            follower_counter: 1250
         },
         {
             name: 'Sports',
             cover_image: 'https://i.imgur.com/w2Rlgyw.jpg',
-            red_score: 2134,
-            blue_score: 12502,
-            indigo: 5.85,
             channel_counter: 27,
-            follower_counter: 6588,
-            views: 98221
+            follower_counter: 6588
         },
         {
             name: 'Design',
             cover_image: 'https://i.imgur.com/b59Z2fW.jpg',
-            red_score: 110,
-            blue_score: 4030,
-            indigo: 36.6,
             channel_counter: 17,
-            follower_counter: 856,
-            views: 19021
+            follower_counter: 856
         },
         {
             name: 'Programming',
             cover_image: 'https://i.imgur.com/0uI10hk.jpg',
-            red_score: 520,
-            blue_score: 11201,
-            indigo:21.5,
             channel_counter: 34,
-            follower_counter: 8093,
-            views: 120271
+            follower_counter: 8093
         },
         {
             name: 'Art',
             cover_image: 'https://i.imgur.com/RQWLdNs.jpg',
-            theme: 'Light',
-            red_score: 320,
-            blue_score: 3756,
-            indigo: 11.73,
             channel_counter: 14,
-            follower_counter: 1250,
-            views: 38004
+            follower_counter: 1250
         },
         {
             name: 'Photography',
             cover_image: 'https://i.imgur.com/ZFbkAYx.jpg',
-            theme: 'Light',
-            red_score: 387,
-            blue_score: 12301,
-            indigo: 31.78,
             channel_counter: 37,
-            follower_counter: 14000,
-            views: 103421
+            follower_counter: 14000
         },
         {
             name: 'Gaming',
             cover_image: 'https://i.imgur.com/kL7Xylm.jpg',
-            theme: 'Dark',
-            red_score: 2760,
-            blue_score: 18886,
-            indigo: 6.84,
             channel_counter: 62,
-            follower_counter: 21420,
-            views: 163408
+            follower_counter: 21420
         },
         {
             name: 'Crypto',
             cover_image: 'https://i.imgur.com/SkKwgCv.jpg',
-            theme: 'Dark',
-            red_score: 6270,
-            blue_score: 8850,
-            indigo: 1.41,
             channel_counter: 42,
-            follower_counter: 17200,
-            views: 193408
+            follower_counter: 17200
         },
         {
             name: 'Science',
             cover_image: 'https://i.imgur.com/dkuOtC7.jpg',
-            theme: 'Light',
-            red_score: 210,
-            blue_score: 8840,
-            indigo: 42.09,
             channel_counter: 16,
-            follower_counter: 12200,
-            views: 65700
+            follower_counter: 12200
         },
         {
             name: 'Real Estate',
             cover_image: 'https://i.imgur.com/pOZ6mKF.jpg',
-            theme: 'Light',
-            red_score: 280,
-            blue_score: 14201,
-            indigo: 50.71,
             channel_counter: 57,
             follower_counter: 22510,
-            views: 198400
         },
         {
             name: 'Cooking',
             cover_image: 'https://i.imgur.com/Hl4QWT8.jpg',
-            theme: 'Light',
-            red_score: 1420,
-            blue_score: 8890,
-            indigo: 6.26,
             channel_counter: 42,
-            follower_counter: 28800,
-            views: 76981
+            follower_counter: 28800
         },
         {
             name: 'Baking',
             cover_image: 'https://i.imgur.com/KSWGXJT.jpg',
-            theme: 'Light',
-            red_score: 1020,
-            blue_score: 22500,
-            indigo: 22.06,
             channel_counter: 63,
-            follower_counter: 38600,
-            views: 208476
+            follower_counter: 38600
         },
 
     ]
 
-    await Group.insertMany(groups);
-    console.log('Created some groups!');
-    return groups;
+    await Category.insertMany(categories);
+    console.log('Created some categories!');
+    return categories;
 }
 const createUsers = async () => {
     // const users = [
@@ -221,8 +164,8 @@ const createComments = async () => {
 }
 
 const run = async () => {
-    await createGroups();
-    await createUsers();
+    await createCategories();
+    // await createUsers();
     // await createChannels();
     // await createPosts();
     // await createComments()
