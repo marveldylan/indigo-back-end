@@ -8,7 +8,7 @@ const createGroups = async () => {
     const groups = [
         {
             name: 'Music',
-            cover_image: 'https://unsplash.com/photos/YrtFlrLo2DQ',
+            cover_image: 'https://i.imgur.com/qpuXD6R.jpg',
             theme: 'Light',
             red_score: 680,
             blue_score: 5423,
@@ -19,7 +19,7 @@ const createGroups = async () => {
         },
         {
             name: 'Sports',
-            cover_image: 'https://unsplash.com/photos/VvQSzMJ_h0U',
+            cover_image: 'https://i.imgur.com/w2Rlgyw.jpg',
             red_score: 2134,
             blue_score: 12502,
             indigo: 5.85,
@@ -29,7 +29,7 @@ const createGroups = async () => {
         },
         {
             name: 'Design',
-            cover_image: 'https://unsplash.com/photos/l3N9Q27zULw',
+            cover_image: 'https://i.imgur.com/b59Z2fW.jpg',
             red_score: 110,
             blue_score: 4030,
             indigo: 36.6,
@@ -39,7 +39,7 @@ const createGroups = async () => {
         },
         {
             name: 'Programming',
-            cover_image: 'https://unsplash.com/photos/4hbJ-eymZ1o',
+            cover_image: 'https://i.imgur.com/0uI10hk.jpg',
             red_score: 520,
             blue_score: 11201,
             indigo:21.5,
@@ -49,7 +49,7 @@ const createGroups = async () => {
         },
         {
             name: 'Art',
-            cover_image: 'https://unsplash.com/photos/7S80NSEEVqU',
+            cover_image: 'https://i.imgur.com/RQWLdNs.jpg',
             theme: 'Light',
             red_score: 320,
             blue_score: 3756,
@@ -60,7 +60,7 @@ const createGroups = async () => {
         },
         {
             name: 'Photography',
-            cover_image: 'https://unsplash.com/photos/IVaKksEZmZA',
+            cover_image: 'https://i.imgur.com/ZFbkAYx.jpg',
             theme: 'Light',
             red_score: 387,
             blue_score: 12301,
@@ -71,7 +71,7 @@ const createGroups = async () => {
         },
         {
             name: 'Gaming',
-            cover_image: 'https://unsplash.com/photos/Mf23RF8xArY',
+            cover_image: 'https://i.imgur.com/kL7Xylm.jpg',
             theme: 'Dark',
             red_score: 2760,
             blue_score: 18886,
@@ -82,7 +82,7 @@ const createGroups = async () => {
         },
         {
             name: 'Cryto',
-            cover_image: 'https://unsplash.com/photos/VhWoA_flio8',
+            cover_image: 'https://i.imgur.com/SkKwgCv.jpg',
             theme: 'Dark',
             red_score: 6270,
             blue_score: 8850,
@@ -93,7 +93,7 @@ const createGroups = async () => {
         },
         {
             name: 'Science',
-            cover_image: 'https://unsplash.com/photos/lQGJCMY5qcM',
+            cover_image: 'https://i.imgur.com/dkuOtC7.jpg',
             theme: 'Light',
             red_score: 210,
             blue_score: 8840,
@@ -104,7 +104,7 @@ const createGroups = async () => {
         },
         {
             name: 'Real Estate',
-            cover_image: 'https://unsplash.com/photos/PhYq704ffdA',
+            cover_image: 'https://i.imgur.com/pOZ6mKF.jpg',
             theme: 'Light',
             red_score: 280,
             blue_score: 14201,
@@ -115,7 +115,7 @@ const createGroups = async () => {
         },
         {
             name: 'Cooking',
-            cover_image: 'https://unsplash.com/photos/EzH46XCDQRY',
+            cover_image: 'https://i.imgur.com/Hl4QWT8.jpg',
             theme: 'Light',
             red_score: 1420,
             blue_score: 8890,
@@ -126,7 +126,7 @@ const createGroups = async () => {
         },
         {
             name: 'Baking',
-            cover_image: 'https://unsplash.com/photos/Hx7xdwhj2AY',
+            cover_image: 'https://i.imgur.com/KSWGXJT.jpg',
             theme: 'Light',
             red_score: 1020,
             blue_score: 22500,
