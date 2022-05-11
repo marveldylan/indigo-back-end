@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 const Group = new Schema (
     {
         user_id: { type: Schema.Types.ObjectId, ref: 'users'},
+        category_id: { type: Schema.Types.ObjectId, ref: 'categories'},
         name: { type: String, required: true },
         cover_image: { type: String, required: false },
         theme: { type: String, required: false},
