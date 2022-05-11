@@ -165,7 +165,6 @@ const createGroups = async () => {
             cover_image: 'https://i.imgur.com/qKavVar.jpg',
             red_score: 0,
             blue_score: 0,
-            indigo: 0,
             channel_counter: 2,
             follower_counter: 0,
             views: 0,
@@ -177,7 +176,6 @@ const createGroups = async () => {
             cover_image: 'https://i.imgur.com/qKavVar.jpg',
             red_score: 950,
             blue_score: 2210,
-            indigo: 2.33,
             channel_counter: 2,
             follower_counter: 6100,
             views: 21402,
@@ -203,7 +201,6 @@ const createChannels = async () => {
             cover_image: 'https://i.imgur.com/zwGJhz9.jpg',
             red_score: 540,
             blue_score: 960,
-            indigo: 1.78,
             follower_counter: 500,
             post_counter: 30,
             views: 10000
@@ -216,7 +213,6 @@ const createChannels = async () => {
             cover_image: 'https://i.imgur.com/7UWNgou.jpg',
             red_score: 410,
             blue_score: 1250,
-            indigo: 3.04,
             follower_counter: 5600,
             post_counter: 45,
             views: 11402
@@ -229,7 +225,6 @@ const createChannels = async () => {
             cover_image: 'https://i.imgur.com/86DzrcQ.jpg',
             red_score: 120,
             blue_score: 1250,
-            indigo: 10.42,
             follower_counter: 320,
             post_counter: 20,
             views: 9800
@@ -242,7 +237,6 @@ const createChannels = async () => {
             cover_image: 'https://i.imgur.com/LTzPcjp.jpg',
             red_score: 300,
             blue_score: 1980,
-            indigo: 6.6,
             follower_counter: 2600,
             post_counter: 40,
             views: 12500
