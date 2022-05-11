@@ -5,7 +5,6 @@ const Group = new Schema (
     {
         user_id: { type: Schema.Types.ObjectId, ref: 'users'},
         name: { type: String, required: true },
-        tags: [{ type: String, required: false}],
         cover_image: { type: String, required: false },
         theme: { type: String, required: false},
         red_score: { type: Number, required: true },
