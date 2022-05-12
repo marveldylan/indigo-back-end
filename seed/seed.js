@@ -163,8 +163,8 @@ const createGroups = async () => {
             category_id: sports[0]._id,
             name: 'Tennis',
             cover_image: 'https://i.imgur.com/qKavVar.jpg',
-            red_score: 0,
-            blue_score: 0,
+            red_score: 5000,
+            blue_score: 10000,
             channel_counter: 2,
             follower_counter: 0,
             views: 0,
@@ -328,9 +328,9 @@ const createComments = async () => {
 
 const run = async () => {
     // await createCategories();
-    // await createGroups();
+    await createGroups();
     // await createUsers();
-    // await createChannels();
+    await createChannels();
     await createPosts();
     // await createComments()
 }
