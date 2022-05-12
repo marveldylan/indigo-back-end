@@ -4,6 +4,8 @@ const Schema = mongoose.Schema
 const Post = new Schema (
     {
         user_id: { type: Schema.Types.ObjectId, ref: 'users'},
+        category_id: { type: Schema.Types.ObjectId, ref: 'categories'},
+        group_id: { type: Schema.Types.ObjectId, ref: 'groups'},
         channel_id: { type: Schema.Types.ObjectId, ref: 'channels'},
         title: { type: String, required: true },
         content: { type: String, required: true },

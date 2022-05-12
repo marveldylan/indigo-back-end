@@ -196,6 +196,7 @@ const createChannels = async () => {
         {
             user_id: "62795b9f4b281fbbe2ed3917",
             group_id: instruments[0]._id,
+            category_id: instruments[0].category_id,
             tags: ['music', 'instrument', 'guitar', 'artist'],
             name: 'Learn Guitar Super Fast!',
             cover_image: 'https://i.imgur.com/zwGJhz9.jpg',
@@ -208,6 +209,7 @@ const createChannels = async () => {
         {
             user_id: "62795b9f4b281fbbe2ed3917",
             group_id: instruments[0]._id,
+            category_id: instruments[0].category_id,
             tags: ['music', 'instrument', 'piano', 'artist'],
             name: 'Learn Piano Super Fast!',
             cover_image: 'https://i.imgur.com/7UWNgou.jpg',
@@ -220,6 +222,7 @@ const createChannels = async () => {
         {
             user_id: "62795b9f4b281fbbe2ed3917",
             group_id: tennis[0]._id,
+            category_id: tennis[0].category_id,
             tags: ['sports', 'tennis'],
             name: 'Tennis Tips',
             cover_image: 'https://i.imgur.com/86DzrcQ.jpg',
@@ -232,6 +235,7 @@ const createChannels = async () => {
         {
             user_id: "62795b9f4b281fbbe2ed3917",
             group_id: tennis[0]._id,
+            category_id: tennis[0].category_id,
             tags: ['sports', 'tennis'],
             name: 'How to Serve',
             cover_image: 'https://i.imgur.com/LTzPcjp.jpg',
@@ -258,6 +262,8 @@ const createPosts = async () => {
         return new Post({
             user_id: learnGuitar[0].user_id,
             channel_id: learnGuitar[0]._id,
+            group_id: learnGuitar[0].group_id,
+            category_id: learnGuitar[0].category_id,
             title: chance.sentence(),
             content: chance.paragraph(),
             red_score: Math.round(Math.random() * 10000),
@@ -270,6 +276,8 @@ const createPosts = async () => {
         return new Post({
             user_id: learnPiano[0].user_id,
             channel_id: learnPiano[0]._id,
+            group_id: learnPiano[0].group_id,
+            category_id: learnPiano[0].category_id,
             title: chance.sentence(),
             content: chance.paragraph(),
             red_score: Math.round(Math.random() * 10000),
@@ -282,6 +290,8 @@ const createPosts = async () => {
         return new Post({
             user_id: tennisTips[0].user_id,
             channel_id: tennisTips[0]._id,
+            group_id: tennisTips[0].group_id,
+            category_id: tennisTips[0].category_id,
             title: chance.sentence(),
             content: chance.paragraph(),
             red_score: Math.round(Math.random() * 10000),
@@ -294,6 +304,8 @@ const createPosts = async () => {
         return new Post({
             user_id: tennisServe[0].user_id,
             channel_id: tennisServe[0]._id,
+            group_id: tennisServe[0].group_id,
+            category_id: tennisServe[0].category_id,
             title: chance.sentence(),
             content: chance.paragraph(),
             red_score: Math.round(Math.random() * 10000),
