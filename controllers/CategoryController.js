@@ -23,9 +23,21 @@ const getCategoryById = async (req, res) => {
     }
 }
 
+const updateCategory = async (req, res) => {
+    try {
+        const category = await Category.findByIdAndUpdate(req.params.id, req.body, {
+            new: true
+        })
+        res.json(category)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
+
 
 
 module.exports = {
     getCategories,
-    getCategoryById
+    getCategoryById,
+    updateCategory
 }

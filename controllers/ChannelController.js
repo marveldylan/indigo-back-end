@@ -85,8 +85,6 @@ const getChannelById = async (req, res) => {
 }
 
 
-
-
 const updateChannel = async (req, res) => {
     try {
         const channel = await Channel.findByIdAndUpdate(req.params.id, req.body, {
