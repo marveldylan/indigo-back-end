@@ -47,9 +47,9 @@ const getGroupById = async (req, res) => {
 
 const getGroupsByCategory = async (req, res) => {
     try {
-        const { id } = req.params;
+        let channelId = req.params.channel_id;
         const group = await Group.findById({
-            category_id: id
+            category_id: channelId
         })
         if (group) {
             return res.status(200).json({ group });
