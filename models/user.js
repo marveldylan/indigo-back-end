@@ -16,6 +16,7 @@ const User = new Schema (
         red_score: { type: Number, required: true },
         blue_score: { type: Number, required: true },
         indigo: { type: Number, default: function() {return (this.red_score / this.blue_score).toFixed(2)}, required: true },
+        subscribed_categories: [{ type: Schema.Types.ObjectId, ref:'categories'}],
         user_groups: [{ type: Schema.Types.ObjectId, ref:'groups'}],
         subscribed_groups: [{ type: Schema.Types.ObjectId, ref:'groups'}],
         user_channels: [{ type: Schema.Types.ObjectId, ref: 'channels' }],
