@@ -34,6 +34,21 @@ const getChannels = async (req, res) => {
     }
 }
 
+const getChannelsByCategory = async (req, res) => {
+    try {
+        let categoryId = req.params.category_id;
+        const channels = await Channel.find({
+            category_id: categoryId
+        })
+        if (channels) {
+            return res.status(200).json({ channels });
+        }
+        return res.status(404).send('Channels with the specified Category ID does not exists');
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 
 const getChannelsByGroup = async (req, res) => {
     try {
@@ -101,6 +116,7 @@ const deleteChannel = async (req, res) => {
 module.exports = {
     createChannel,
     getChannels,
+    getChannelsByCategory,
     getChannelsByGroup,
     getChannelsByUser,
     getChannelById,
