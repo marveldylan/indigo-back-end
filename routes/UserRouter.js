@@ -27,48 +27,55 @@ Router.put(
     controller.userUnfollowCategory
 )
 
-// Router.put(
-//     '/:id/unfollow/group/:group_id',
-//     middleware.stripToken,
-//     middleware.verifyToken,
-//     controller.userUnfollowGroup
-// )
+Router.put(
+    '/:user_id/unfollow/group/:group_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userUnfollowGroup
+)
 
-// Router.put(
-//     '/:id/disband/group/:group_id',
-//     middleware.stripToken,
-//     middleware.verifyToken,
-//     controller.userDisbandGroup
-// )
+Router.put(
+    '/:user_id/disband/group/:group_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userDisbandGroup
+)
 
-// Router.put(
-//     '/:id/unfollow/channel/:channel_id',
-//     middleware.stripToken,
-//     middleware.verifyToken,
-//     controller.userUnfollowChannel
-// )
+Router.put(
+    '/:user_id/unfollow/channel/:channel_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userUnfollowChannel
+)
 
 
-// Router.put(
-//     '/:id/disband/channel/:channel_id',
-//     middleware.stripToken,
-//     middleware.verifyToken,
-//     controller.userDisbandChannel
-// )
+Router.put(
+    '/:user_id/disband/channel/:channel_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userDisbandChannel
+)
 
-// Router.put(
-//     '/:id/remove/post/:post_id',
-//     middleware.stripToken,
-//     middleware.verifyToken,
-//     controller.userRemoveSavedPost
-// )
+Router.put(
+    '/:user_id/remove/post/:post_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userRemoveSavedPost
+)
 
-// Router.put(
-//     '/:id/unfollow/user/:user_id',
-//     middleware.stripToken,
-//     middleware.verifyToken,
-//     controller.userUnfollowUser
-// )
+Router.put(
+    '/:user_id/remove/post/:post_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userRemoveUserPost
+)
+
+Router.put(
+    '/:user_id/unfollow/user/:followed_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userUnfollowUser
+)
 
 
 module.exports = (
