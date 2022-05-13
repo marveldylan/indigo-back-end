@@ -14,7 +14,8 @@ const Post = new Schema (
         red_score: { type: Number, required: true },
         blue_score: { type: Number, required: true },
         indigo: { type: Number, default: function() {return (this.blue_score/this.red_score).toFixed(2)}, required: true },
-        comment_counter: { type: Number, required: true },
+        comments: [{ type: Schema.Types.ObjectId, ref: 'comments'}],
+        comment_counter: {type: Number, default: function() {return (this.comments.length)}},
         views: { type: Number, required: true }
     },
     { timestamps: true },

@@ -62,6 +62,36 @@ const updatePost = async (req, res) => {
     }
 }
 
+const addComment = async (req, res) => {
+    try {
+        let postId = req.params.post_id
+        let commentId = req.params.comment_id;
+        const post = await Post.findByIdAndUpdate(postId, {
+            $push: {
+                comments: commentId
+            }
+        })
+        res.json(user)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
+
+const removeComment = async (req, res) => {
+    try {
+        let postId = req.params.post_id
+        let commentId = req.params.comment_id;
+        const post = await Post.findByIdAndUpdate(postId, {
+            $pull: {
+                comments: commentId
+            }
+        })
+        res.json(user)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
+
 const deletePost = async (req, res) => {
     try {
         const postId  = req.params.post_id;
@@ -82,5 +112,7 @@ module.exports = {
     getPostsByChannel,
     getPostById,
     updatePost,
+    addComment,
+    removeComment,
     deletePost
 }

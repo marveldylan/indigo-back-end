@@ -27,6 +27,20 @@ Router.put(
     controller.updatePost
 )
 
+Router.put(
+    '/:post_id/comment/:comment_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.addComment
+)
+
+Router.put(
+    '/:post_id/comment/:comment_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.removeComment
+)
+
 Router.delete(
     '/:channel_id/:post_id',
     middleware.stripToken,

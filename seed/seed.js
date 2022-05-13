@@ -268,7 +268,6 @@ const createPosts = async () => {
             content: chance.paragraph(),
             red_score: Math.round(Math.random() * 10000),
             blue_score: Math.round(Math.random() * 10000),
-            comment_counter: Math.round(Math.random() * 1000),
             views: Math.round(Math.random() * 100000)
         })
     }))
@@ -282,7 +281,6 @@ const createPosts = async () => {
             content: chance.paragraph(),
             red_score: Math.round(Math.random() * 10000),
             blue_score: Math.round(Math.random() * 10000),
-            comment_counter: Math.round(Math.random() * 1000),
             views: Math.round(Math.random() * 100000)
         })
     }))
@@ -296,7 +294,6 @@ const createPosts = async () => {
             content: chance.paragraph(),
             red_score: Math.round(Math.random() * 10000),
             blue_score: Math.round(Math.random() * 10000),
-            comment_counter: Math.round(Math.random() * 1000),
             views: Math.round(Math.random() * 100000)
         })
     }))
@@ -310,7 +307,6 @@ const createPosts = async () => {
             content: chance.paragraph(),
             red_score: Math.round(Math.random() * 10000),
             blue_score: Math.round(Math.random() * 10000),
-            comment_counter: Math.round(Math.random() * 1000),
             views: Math.round(Math.random() * 100000)
         })
     }))
