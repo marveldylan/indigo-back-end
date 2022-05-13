@@ -9,6 +9,7 @@ const Post = new Schema (
         channel_id: { type: Schema.Types.ObjectId, ref: 'channels'},
         title: { type: String, required: true },
         content: { type: String, required: true },
+        attachment: { type: String, required: false },
         background: { type: String, required: false },
         tags: [{ type: String, required: false}],
         red_score: { type: Number, required: true },
