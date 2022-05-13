@@ -12,8 +12,8 @@ const getUsers = async (req, res) => {
 
 const getUserById = async (req, res) => {
     try {
-        const { id } = req.params;
-        const user = await User.findById(id)
+        const userId = req.params.user_id;
+        const user = await User.findById(userId)
         if (user) {
             return res.status(200).json({ user });
         }
@@ -25,7 +25,7 @@ const getUserById = async (req, res) => {
 
 const updateUser = async (req, res) => {
     try {
-        const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+        const user = await User.findByIdAndUpdate(req.params.user_id, req.body, {
             new: true
         })
         res.json(user)
@@ -36,7 +36,7 @@ const updateUser = async (req, res) => {
 
 const userUnfollowCategory = async (req, res) => {
     try {
-        let userId = req.params.id
+        let userId = req.params.user_id
         let categoryId = req.params.category_id;
         const user = await User.findByIdAndUpdate(userId, {
             $pull: {
