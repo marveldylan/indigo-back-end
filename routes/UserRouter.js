@@ -20,6 +20,13 @@ Router.put(
     controller.updateUser
 )
 
+Router.put(
+    '/:id/unfollow/category/:category_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userUnfollowCategory
+)
+
 module.exports = (
     Router
 )

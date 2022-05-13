@@ -34,8 +34,24 @@ const updateUser = async (req, res) => {
     }
 }
 
+const userUnfollowCategory = async (req, res) => {
+    try {
+        let userId = req.params.id
+        let categoryId = req.params.category_id;
+        const user = await User.findByIdAndUpdate(userId, {
+            $pull: {
+                subscribed_categories: categoryId
+            }
+        })
+        res.json(user)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
+
 module.exports = {
     getUsers,
     getUserById,
-    updateUser
+    updateUser,
+    userUnfollowCategory
 }
