@@ -48,6 +48,7 @@ Router.put(
     controller.userUnfollowChannel
 )
 
+
 Router.put(
     '/:id/disband/channel/:channel_id',
     middleware.stripToken,
@@ -56,10 +57,10 @@ Router.put(
 )
 
 Router.put(
-    '/:id/disband/user/:user_id',
+    '/:id/remove/post/:post_id',
     middleware.stripToken,
     middleware.verifyToken,
-    controller.userDisbandUser
+    controller.userRemoveSavedPost
 )
 
 Router.put(
