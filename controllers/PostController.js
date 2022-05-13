@@ -24,11 +24,11 @@ const createPost = async (req, res) => {
     }
 }
 
-const getPosts = async (req, res) => {
+const getPostsByChannel = async (req, res) => {
     try {
         const posts = await Post.find({
             channel_id: req.params.channel_id
-        })
+        }).populate('user_id')
         return res.status(200).json({ posts })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -79,7 +79,7 @@ const deletePost = async (req, res) => {
 
 module.exports = {
     createPost,
-    getPosts,
+    getPostsByChannel,
     getPostById,
     updatePost,
     deletePost

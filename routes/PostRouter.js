@@ -4,8 +4,8 @@ const middleware = require('../middleware')
 
 //Routes
 Router.get(
-    '/:channel_id',
-    controller.getPosts
+    '/channel/:channel_id',
+    controller.getPostsByChannel
 )
 
 Router.get(
