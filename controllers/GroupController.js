@@ -35,7 +35,7 @@ const getGroups = async (req, res) => {
 const getGroupById = async (req, res) => {
     try {
         const { id } = req.params;
-        const group = await Group.findById(id)
+        const group = await Group.findById(id).populate('user_id')
         if (group) {
             return res.status(200).json({ group });
         }

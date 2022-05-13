@@ -74,7 +74,7 @@ const getChannelsByUser = async (req, res) => {
 const getChannelById = async (req, res) => {
     try {
         const { id } = req.params;
-        const channel = await Channel.findById(id)
+        const channel = await Channel.findById(id).populate('user_id')
         if (channel) {
             return res.status(200).json({ channel });
         }
