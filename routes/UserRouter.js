@@ -21,10 +21,24 @@ Router.put(
 )
 
 Router.put(
+    '/:user_id/follow/category/:category_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userFollowCategory
+)
+
+Router.put(
     '/:user_id/unfollow/category/:category_id',
     middleware.stripToken,
     middleware.verifyToken,
     controller.userUnfollowCategory
+)
+
+Router.put(
+    '/:user_id/follow/group/:group_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userFollowGroup
 )
 
 Router.put(
@@ -39,6 +53,13 @@ Router.put(
     middleware.stripToken,
     middleware.verifyToken,
     controller.userDisbandGroup
+)
+
+Router.put(
+    '/:user_id/follow/channel/:channel_id',
+    middleware.stripToken,
+    middleware.verifyToken,
+    controller.userFollowChannel
 )
 
 Router.put(

@@ -34,6 +34,21 @@ const updateUser = async (req, res) => {
     }
 }
 
+const userFollowCategory = async (req, res) => {
+    try {
+        let userId = req.params.user_id
+        let categoryId = req.params.category_id;
+        const user = await User.findByIdAndUpdate(userId, {
+            $push: {
+                subscribed_categories: categoryId
+            }
+        })
+        res.json(user)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
+
 const userUnfollowCategory = async (req, res) => {
     try {
         let userId = req.params.user_id
@@ -41,6 +56,21 @@ const userUnfollowCategory = async (req, res) => {
         const user = await User.findByIdAndUpdate(userId, {
             $pull: {
                 subscribed_categories: categoryId
+            }
+        })
+        res.json(user)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
+
+const userFollowGroup = async (req, res) => {
+    try {
+        let userId = req.params.user_id
+        let groupId = req.params.group_id;
+        const user = await User.findByIdAndUpdate(userId, {
+            $push: {
+                subscribed_groups: groupId
             }
         })
         res.json(user)
@@ -71,6 +101,21 @@ const userDisbandGroup = async (req, res) => {
         const user = await User.findByIdAndUpdate(userId, {
             $pull: {
                 user_groups: groupId
+            }
+        })
+        res.json(user)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
+
+const userFollowChannel = async (req, res) => {
+    try {
+        let userId = req.params.user_id
+        let channelId = req.params.channel_id;
+        const user = await User.findByIdAndUpdate(userId, {
+            $push: {
+                subscribed_channels: channelId
             }
         })
         res.json(user)
@@ -139,6 +184,21 @@ const userRemoveUserPost = async (req, res) => {
     }
 }
 
+const userFollowUser = async (req, res) => {
+    try {
+        let userId = req.params.user_id
+        let followedId = req.params.followed_id;
+        const user = await User.findByIdAndUpdate(userId, {
+            $push: {
+                following: followedId
+            }
+        })
+        res.json(user)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
+
 const userUnfollowUser = async (req, res) => {
     try {
         let userId = req.params.user_id
@@ -160,13 +220,17 @@ module.exports = {
     getUsers,
     getUserById,
     updateUser,
+    userFollowCategory,
     userUnfollowCategory,
     userUnfollowGroup,
+    userFollowGroup,
     userDisbandGroup,
+    userFollowChannel,
     userUnfollowChannel,
     userDisbandChannel,
     userRemoveSavedPost,
     userRemoveUserPost,
+    userFollowUser,
     userUnfollowUser
 
 }
