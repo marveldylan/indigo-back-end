@@ -15,7 +15,7 @@ const User = new Schema (
         comment_background: { type: String, required: false },
         red_score: { type: Number, required: true },
         blue_score: { type: Number, required: true },
-        indigo: { type: Number, default: function() {return (this.red_score / this.blue_score).toFixed(2)}, required: true },
+        indigo: { type: Number, default: function() {return (this.blue_score/this.red_score).toFixed(2)}, required: true },
         subscribed_categories: [{ type: Schema.Types.ObjectId, ref:'categories'}],
         user_groups: [{ type: Schema.Types.ObjectId, ref:'groups'}],
         subscribed_groups: [{ type: Schema.Types.ObjectId, ref:'groups'}],
