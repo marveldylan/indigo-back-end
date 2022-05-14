@@ -18,6 +18,11 @@ Router.get(
     controller.getGroupsByCategory
 )
 
+Router.get(
+    '/user/:user_id',
+    controller.getGroupsByUser
+)
+
 Router.post(
     '/:user_id',
     middleware.stripToken,

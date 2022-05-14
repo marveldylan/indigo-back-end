@@ -60,6 +60,21 @@ const getGroupsByCategory = async (req, res) => {
     }
 }
 
+const getGroupsByUser = async (req, res) => {
+    try {
+        let userId = req.params.user_id;
+        const groups = await Group.find({
+            user_id: userId
+        })
+        if (groups) {
+            return res.status(200).json({ groups });
+        }
+        return res.status(404).send('Groups with the specified User ID does not exists');
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 
 
 const updateGroup = async (req, res) => {
@@ -93,6 +108,7 @@ module.exports = {
     getGroups,
     getGroupById,
     getGroupsByCategory,
+    getGroupsByUser,
     updateGroup,
     deleteGroup
 }

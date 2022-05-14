@@ -34,35 +34,55 @@ const updateUser = async (req, res) => {
     }
 }
 
-const userFollowCategory = async (req, res) => {
-    try {
-        let userId = req.params.user_id
-        let categoryId = req.params.category_id;
-        const user = await User.findByIdAndUpdate(userId, {
-            $push: {
-                subscribed_categories: categoryId
-            }
-        })
-        res.json(user)
-    } catch (error) {
-        res.send(error.message)
-    }
-}
+// const userFollowCategory = async (req, res) => {
+//     try {
+//         let userId = req.params.user_id
+//         let categoryId = req.params.category_id;
+//         const user = await User.findByIdAndUpdate(userId, {
+//             $push: {
+//                 subscribed_categories: categoryId
+//             }
+//         })
+//         res.json(user)
+//     } catch (error) {
+//         res.send(error.message)
+//     }
+// }
 
-const userUnfollowCategory = async (req, res) => {
-    try {
-        let userId = req.params.user_id
-        let categoryId = req.params.category_id;
-        const user = await User.findByIdAndUpdate(userId, {
-            $pull: {
-                subscribed_categories: categoryId
-            }
-        })
-        res.json(user)
-    } catch (error) {
-        res.send(error.message)
-    }
-}
+// const userFollowCategory = async (req, res) => {
+//     try {
+//         let userId = req.params.user_id
+//         let categoryId = req.params.category_id;
+//         const user = await User.findOneAndUpdate(
+//             {
+//                 _id: userId, 
+//                 subscribed_categores: { $nin: [categoryId]}
+//             }, 
+//             {
+//                 $push: {
+//                     subscribed_categories: categoryId
+//             }
+//         })
+//         res.json(user)
+//     } catch (error) {
+//         res.send(error.message)
+//     }
+// }
+
+// const userUnfollowCategory = async (req, res) => {
+//     try {
+//         let userId = req.params.user_id
+//         let categoryId = req.params.category_id;
+//         const user = await User.findByIdAndUpdate(userId, {
+//             $pullAll: {
+//                 subscribed_categories: categoryId
+//             }
+//         })
+//         res.json(user)
+//     } catch (error) {
+//         res.send(error.message)
+//     }
+// }
 
 const userFollowGroup = async (req, res) => {
     try {
@@ -220,8 +240,8 @@ module.exports = {
     getUsers,
     getUserById,
     updateUser,
-    userFollowCategory,
-    userUnfollowCategory,
+    // userFollowCategory,
+    // userUnfollowCategory,
     userUnfollowGroup,
     userFollowGroup,
     userDisbandGroup,

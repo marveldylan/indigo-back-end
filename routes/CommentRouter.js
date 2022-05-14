@@ -4,13 +4,17 @@ const middleware = require('../middleware')
 
 //Routes
 Router.get(
-    '/:post_id',
+    '/post/:post_id',
     controller.getComments
 )
 
 Router.get(
-    '/:post_id/:comment_id',
+    '/:comment_id',
     controller.getCommentById
+)
+
+Router.get(
+    '/user/:user_id'
 )
 
 Router.post(

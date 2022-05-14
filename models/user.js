@@ -17,12 +17,8 @@ const User = new Schema (
         blue_score: { type: Number, required: true },
         indigo: { type: Number, default: function() {return (this.blue_score/this.red_score).toFixed(2)}, required: true },
         subscribed_categories: [{ type: Schema.Types.ObjectId, ref:'categories'}],
-        user_groups: [{ type: Schema.Types.ObjectId, ref:'groups'}],
         subscribed_groups: [{ type: Schema.Types.ObjectId, ref:'groups'}],
-        user_channels: [{ type: Schema.Types.ObjectId, ref: 'channels' }],
         subscribed_channels: [{ type: Schema.Types.ObjectId, ref: 'channels' }],
-        user_comments: [{ type: Schema.Types.ObjectId, ref: 'channels' }],
-        user_posts: [{ type: Schema.Types.ObjectId, ref: 'posts' }],
         saved_posts: [{ type: Schema.Types.ObjectId, ref: 'posts' }],
         following: [{ type: Schema.Types.ObjectId, ref: 'users' }],
         followers: [{ type: Schema.Types.ObjectId, ref: 'users' }]

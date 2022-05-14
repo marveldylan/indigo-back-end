@@ -9,7 +9,12 @@ Router.get(
 )
 
 Router.get(
-    '/:channel_id/:post_id',
+    '/user/:user_id',
+    controller.getPostsByUser
+)
+
+Router.get(
+    '/:post_id',
     controller.getPostById
 )
 
