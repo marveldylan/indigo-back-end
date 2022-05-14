@@ -25,7 +25,7 @@ const createGroup = async (req, res) => {
 
 const getGroups = async (req, res) => {
     try {
-        const groups = await Group.find()
+        const groups = await Group.find().populate('user_id')
         return res.status(200).json({ groups })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -51,6 +51,7 @@ const getGroupsByCategory = async (req, res) => {
         const groups = await Group.find({
             category_id: categoryId
         })
+        .populate('user_id')
         if (groups) {
             return res.status(200).json({ groups });
         }
@@ -66,6 +67,7 @@ const getGroupsByUser = async (req, res) => {
         const groups = await Group.find({
             user_id: userId
         })
+        .populate('user_id')
         if (groups) {
             return res.status(200).json({ groups });
         }

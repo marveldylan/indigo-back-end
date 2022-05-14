@@ -28,6 +28,7 @@ const getComments = async (req, res) => {
         const comments = await Comment.find({
             post_id: req.params.post_id        
         })
+        .populate('user_id')
         return res.status(200).json({ comments })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -39,6 +40,7 @@ const getCommentsByUser = async (req, res) => {
         const comments = await Comment.find({
             user_id: req.params.user_id        
         })
+        .populate('user_id')
         return res.status(200).json({ comments })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -48,7 +50,7 @@ const getCommentsByUser = async (req, res) => {
 const getCommentById = async (req, res) => {
     try {
         const commentId = req.params.comment_id;
-        const comment = await Comment.findById(commentId)
+        const comment = await Comment.findById(commentId).populate('user_id')
         if (comment) {
             return res.status(200).json({ comment });
         }

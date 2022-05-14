@@ -39,7 +39,8 @@ const getPostsByUser = async (req, res) => {
     try {
         const posts = await Post.find({
             user_id: req.params.user_id
-        }).populate('user_id')
+        })
+        .populate('user_id')
         return res.status(200).json({ posts })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -49,7 +50,7 @@ const getPostsByUser = async (req, res) => {
 const getPostById = async (req, res) => {
     try {
         const postId  = req.params.post_id;
-        const post = await Post.findById(postId)
+        const post = await Post.findById(postId).populate('user_id')
         if (post) {
             return res.status(200).json({ post });
         }

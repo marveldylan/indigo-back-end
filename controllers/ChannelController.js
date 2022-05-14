@@ -27,7 +27,7 @@ const createChannel = async (req, res) => {
 
 const getChannels = async (req, res) => {
     try {
-        const channels = await Channel.find()
+        const channels = await Channel.find().populate('user_id')
         return res.status(200).json({ channels })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -40,6 +40,7 @@ const getChannelsByCategory = async (req, res) => {
         const channels = await Channel.find({
             category_id: categoryId
         })
+        .populate('user_id')
         if (channels) {
             return res.status(200).json({ channels });
         }
@@ -55,6 +56,7 @@ const getChannelsByGroup = async (req, res) => {
         const channels = await Channel.find({
             group_id: req.params.group_id
         })
+        .populate('user_id')
         return res.status(200).json({ channels })
     } catch (error) {
         return res.status(500).send(error.message);
@@ -65,6 +67,7 @@ const getChannelsByUser = async (req, res) => {
         const channels = await Channel.find({
             user_id: req.params.user_id
         })
+        .populate('user_id')
         return res.status(200).json({ channels })
     } catch (error) {
         return res.status(500).send(error.message);
