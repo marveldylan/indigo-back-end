@@ -32,7 +32,7 @@ Router.put(
 )
 
 Router.delete(
-    '/:post_id/:comment_id',
+    '/:comment_id',
     middleware.stripToken,
     middleware.verifyToken,
     controller.deleteComment

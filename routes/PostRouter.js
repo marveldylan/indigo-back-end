@@ -26,7 +26,7 @@ Router.post(
 )
 
 Router.put(
-    '/:channel_id/:post_id',
+    '/:post_id',
     middleware.stripToken,
     middleware.verifyToken,
     controller.updatePost
@@ -47,7 +47,7 @@ Router.put(
 )
 
 Router.delete(
-    '/:channel_id/:post_id',
+    '/:post_id',
     middleware.stripToken,
     middleware.verifyToken,
     controller.deletePost
