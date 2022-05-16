@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 app.use(logger('dev'));
 
-app.use(urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/', AppRouter)
 
