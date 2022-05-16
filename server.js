@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 app.use(logger('dev'));
 
-app.use(urlencoded({required: false}));
+app.use(urlencoded({ extended: true }));
 
 app.use('/', AppRouter)
 
