@@ -25,7 +25,7 @@ Router.post(
 )
 
 Router.put(
-    '/:post_id/:comment_id',
+    '/:comment_id',
     middleware.stripToken,
     middleware.verifyToken,
     controller.updateComment
