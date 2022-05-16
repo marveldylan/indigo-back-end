@@ -11,14 +11,10 @@ const app = express();
 const AppRouter = require('./routes/AppRouter')
 const PORT = process.env.PORT || 3001;
 
-// tru adding secure from tutorial:
-const secure = require('ssl-express-www');
 
 
 // app.use() Middleware:
 
-// try adding from tutorial:
-app.use(secure)
 
 app.use(cors());
 
