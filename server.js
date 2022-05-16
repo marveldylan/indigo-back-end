@@ -9,7 +9,7 @@ const db = require('./db');
 
 const app = express();
 const AppRouter = require('./routes/AppRouter')
-const PORT = process.env.Port || 3001;
+const PORT = process.env.PORT || 3001;
 
 
 // app.use() Middleware:
